@@ -1,0 +1,45 @@
+﻿@using Shop.Models
+@using Shop.Services
+@model List<Item>
+@{
+    ViewData["Title"] = "Shopping";
+}
+
+<script src="~/js/client.js"></script>
+<script src="https://widget.cloudpayments.ru/bundles/cloudpayments"></script>
+
+<br />
+<h2>Select items:</h2>
+<form>
+    <link rel="stylesheet" href="~/css/styles.css">
+    <div class="container">
+        <ul class="goods">
+            @foreach (Item item in Model)
+            {
+            <li data-id="@item.Id">
+                <div class="good-image">
+                    <span class="helper"></span>
+                    <img style="height: auto; width: auto; max-width: 80px; max-height: 80px;" src="@Url.Content(item.Image)" />
+                </div>
+                <div class="good-info">
+                    <span>@item.Name</span>
+                    <br />
+                    <span>@item.Price.ToString("#,##0.00") @Html.Raw(CurrencyService.GetCurrencyCode(item.Currency))</span>
+                </div>
+            </li>
+            }
+        </ul>
+        <div id="totalSumPartialView">
+            <partial name="TotalSum" model="null" />
+        </div>
+    </div>
+</form>
+
+<p class="lead">
+    <button id="payButton" disabled="disabled" class="btn btn-lg btn-primary">
+        Pay
+    </button>
+</p>
+
+<p id="errorMessage" class="lead" hidden="hidden">Please select items in one currency.</p>
+

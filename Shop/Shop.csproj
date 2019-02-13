@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\site.css" />
+    <Content Remove="wwwroot\images\banner1.svg" />
+    <Content Remove="wwwroot\lib\bootstrap\.bower.json" />
+    <Content Remove="wwwroot\js\site.js" />
+    <Content Remove="wwwroot\js\jquery.js" />
+    <Content Remove="wwwroot\js\payment.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\css\" />
+    <Folder Include="Services\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Services\ItemsService.cs" />
+  </ItemGroup>
+</Project>

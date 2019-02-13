@@ -1,0 +1,23 @@
+﻿[
+  {
+    "id":  1,
+    "name": "Sheriff badge",
+    "price": 2150,
+    "currency":  "USD",
+    "img": "~/images/sheriff_badge.jpg"
+  },
+  {
+    "id":  2,
+    "name": "Bong",
+    "price": 1100.00,
+    "currency":  "RUR",
+    "img": "~/images/bong.jpg"
+  },
+  {
+    "id":  3,
+    "name": "Vinyl record player",
+    "price": 12490.80,
+    "currency":  "RUR",
+    "img": "~/images/vinyl_record_player.jpg"
+  }
+]
